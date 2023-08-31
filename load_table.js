@@ -581,15 +581,137 @@ function generateLongTable(tableId, filenames, page) {
 }
 
 
+add = [
+  'add_acoustic_guitar_1',
+  'add_bass_42',
+  'add_drum_kit_47',
+  'add_acoustic_guitar_11',
+  'add_piano_16',
+  'add_drum_kit_49',
+  'add_drum_kit_55',
+  'add_piano_19',
+  'add_piano_25',
+  'add_rhythm_acoustic_guitar_0',
+]
+remove = ['remove_drum_kit_109', 'remove_drum_kit_110', 'remove_bass_96', 'remove_piano_76', 'remove_drum_kit_107', 'remove_electric_piano_83', 'remove_acoustic_guitar_68', 'remove_rhythm_acoustic_guitar_69', 'remove_acoustic_guitar_62', 'remove_piano_79']
+extract = ['extract_drum_kit_172', 'extract_drum_kit_166', 'extract_rhythm_acoustic_guitar_123', 'extract_bass_153', 'extract_electric_piano_136', 'extract_piano_141', 'extract_piano_142', 'extract_acoustic_guitar_126', 'extract_drum_kit_178', 'extract_rhythm_acoustic_guitar_128']
+replace = ['replace_rhythm_acoustic_guitar_with_drum_kit_202', 'replace_bass_with_piano_207', 'replace_bass_with_drum_kit_219', 'replace_bass_with_electric_guitar_236', 'replace_acoustic_guitar_with_drum_kit_189', 'replace_pedal_steel_guitar_with_bass_181', 'replace_pedal_steel_guitar_with_drum_kit_192', 'replace_bass_with_electric_guitar_227', 'replace_drum_kit_with_bass_239', 'replace_bass_with_electric_guitar_182']
+
+instr = ['remix_with_guitar_drums_piano_synth_lead_20', 'remix_with_drums_guitar_bass_3', 'remix_with_drums_piano_12', 'remix_with_bass_drum_strings_1', 'remix_with_bass_guitar_drums_2', 'remix_with_guitar_strings_drums_bass_10', 'remix_with_piano_drums_strings_bass_guitar_11', 'remix_with_guitar_strings_synth_pad_bass_piano_13', 'remix_with_guitar_drums_bass_piano_strings_17', 'remix_with_bass_synth_lead_strings_piano_drums_18']
+//['remix_this_music_11', 'remix_this_music_20', 'remix_this_music_17', 'remix_this_music_2', 'remix_this_music_13', 'remix_this_music_12', 'remix_with_bass_drum_strings_1', 'remix_this_music_10', 'remix_this_music_3', 'remix_this_music_18']
+// ['remix_with_guitar_drums_piano_synth_lead_20', 'remix_with_drums_piano_guitar_bass_3', 'remix_with_drums_piano_12', 'remix_with_bass_piano_strings_1', 'remix_with_bass_guitar_drums_2', 'remix_with_guitar_piano_strings_drums_bass_10', 'remix_with_piano_drums_strings_bass_guitar_11', 'remix_with_guitar_strings_synth_pad_bass_piano_13', 'remix_with_guitar_drums_bass_piano_strings_17', 'remix_with_bass_synth_lead_strings_piano_drums_18']
+
+genre = ['remix_to_pop_genre_10', 'remix_to_blues_genre_5', 'remix_to_r_and_b_genre_14', 'remix_to_funk_genre_3', 'remix_to_soul_genre_6', 'remix_to_alternative_genre_2', 'remix_to_r_and_b_genre_12', 'remix_to_rock_genre_9', 'remix_to_disco_genre_15', 'remix_to_pop_genre_13']
+
+soft = ['remix_with_piano_drums_guitar_bass_14', 'remix_with_bass_piano_guitar_drums_9', 'remix_with_piano_drums_bass_guitar_23']
+// ['remix_this_music_9', 'remix_this_music_23', 'remix_this_music_14']
+// ['remix_with_piano_drums_guitar_bass_14', 'remix_with_bass_piano_guitar_drums_9', 'remix_with_piano_drums_bass_guitar_23']
+
+happy = ['remix_with_bass_drums_guitar_piano_53', 'remix_with_bass_0', 'remix_with_drums_bass_guitar_18']
+// ['remix_this_music_18', 'remix_this_music_53', 'remix_this_music_0']
+// ['remix_with_bass_drums_guitar_piano_53', 'remix_with_bass_0', 'remix_with_drums_bass_guitar_18']
+dedit = ['add_piano_16', 'add_acoustic_guitar_1', 'add_drum_kit_49', 'replace_bass_with_electric_guitar_236', 'replace_bass_with_drum_kit_219', 'replace_bass_with_piano_207']
+
+dremix = ['remix_to_pop_genre_25', 'remix_to_alternative_genre_2', 'remix_with_drums_guitar_bass_29', 'remix_with_drums_piano_12', 'remix_with_bass_synth_lead_drums_31', 'remix_to_pop_genre_10']
+
+sedit = ['remove_drum_kit_107', 'extract_piano_141', 'extract_rhythm_acoustic_guitar_123', 'extract_drum_kit_166', 'remove_piano_76', 'remove_acoustic_guitar_62']
+
+multi = ['audit', 'instructme']
+
+long = ['add_rhythm_acoustic_guitar_1', 'add_rhythm_acoustic_guitar_1', 'extract_electric_guitar_8', 'extract_electric_guitar_8', 'add_bass_3', 'add_bass_3', 'add_electric_drum_kit_0', 'add_electric_drum_kit_0', 'remove_piano_6', 'remove_piano_6']
+
+real = ['add_rhythm_acoustic_guitar_0', 'add_string_sections_1', 'replace_acoustic_guitar_with_piano_2', 'replace_violin_with_piano_5', 'replace_piano_with_acoustic_guitar_6', 'remove_electric_guitar_71', 'extract_electric_guitar_7', 'remove_drum_kit_8', 'add_bass_9', 'add_electric_drum_kit_10']
+
+title = ['Lost Woods', 'Gugur Bunga', 'Zelda', "Twilight - Bella's Lullaby", 'Dolphin Dance', 'Fall Sounds', 'Fall Sounds', 'Amas Veritas', 'Aşk-ı Memnu Jenerik Müziği', "Eline Kleine Nachtmusik-Mov't 1-M'"]
+
+melody = ['add_bass_0', 'remove_drum_kit_1', 'replace_drum_kit_with_piano_2', 'remove_drum_kit_3']
+
+melody_t = ['菊花台', '麦浪', '月亮不曾奔我而来', 'Lover']
 
 noisy_female_female = ['DDCEM_121-127105-0011_4970-29095-0009','DDCEM_121-127105-0028_4507-16021-0025','DDCEM_121-127105-0028_4507-16021-0025']
+
+
+generateEditTable('add', add  , 1);
+generateEditTable('remove', remove  , 1);
+generateEditTable('extract', extract  , 1);
+generateEditTable('replace', replace  , 1);
+
 generateEditTable('multi_noisy', noisy_female_female , 1);
 
 
 
+generateRemixTable('instr', instr  , 1);
+generateRemixTable('genre', genre  , 1);
+generateRemixGuideTable('soft', soft  , 1);
+generateRemixGuideTable('happy', happy  , 1);
+generateDiversityTable('dedit', dedit  , 1);
+generateDiversityRemixTable('dremix', dremix  , 1);
+generateDiversityTable('sedit', sedit  , 1);
+generateRealTable('real', real, title, 1);
+generateRealTable('melody', melody, melody_t, 1);
+generateMultiTable('multi', multi  , 1);
+generateLongTable('long', long  , 1);
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#add-operation-' + i;
+    $(id).click(function() {
+      generateEditTable(
+          'add',
+          add, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#remove-operation-' + i;
+    $(id).click(function() {
+      generateEditTable(
+          'remove',
+          remove, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#extract-operation-' + i;
+    $(id).click(function() {
+      generateEditTable(
+          'extract',
+          extract, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
 $(document).ready(function() {
   for (let i = 1; i <= 3; i++) {
     let id = '#replace-operation-' + i;
+    $(id).click(function() {
+      generateEditTable(
+          'replace',
+          replace, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#multi-noisy-' + i;
     $(id).click(function() {
       generateEditTable(
           'multi-noisy',
@@ -600,3 +722,146 @@ $(document).ready(function() {
     });
   }
 });
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#instr-operation-' + i;
+    $(id).click(function() {
+      generateRemixTable(
+          'instr',
+          instr, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#genre-operation-' + i;
+    $(id).click(function() {
+      generateRemixTable(
+          'genre',
+          genre, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 1; i++) {
+    let id = '#soft-operation-' + i;
+    $(id).click(function() {
+      generateRemixGuideTable(
+          'soft',
+          soft, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 1; i++) {
+    let id = '#happy-operation-' + i;
+    $(id).click(function() {
+      generateRemixGuideTable(
+          'happy',
+          happy, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 2; i++) {
+    let id = '#dedit-operation-' + i;
+    $(id).click(function() {
+      generateDiversityTable(
+          'dedit',
+          dedit, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 2; i++) {
+    let id = '#dremix-operation-' + i;
+    $(id).click(function() {
+      generateDiversityRemixTable(
+          'dremix',
+          dremix, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+
+$(document).ready(function() {
+  for (let i = 1; i <= 2; i++) {
+    let id = '#sedit-operation-' + i;
+    $(id).click(function() {
+      generateDiversityTable(
+          'sedit',
+          sedit, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#real-operation-' + i;
+    $(id).click(function() {
+      generateRealTable(
+          'real',
+          real, title, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+
+$(document).ready(function() {
+  for (let i = 1; i <= 1; i++) {
+    let id = '#multi-operation-' + i;
+    $(id).click(function() {
+      generateMultiTable(
+          'multi',
+          multi, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+
+// $(document).ready(function() {
+//   for (let i = 1; i <= 1; i++) {
+//     let id = '#long-operation-' + i;
+//     $(id).click(function() {
+//       generateLongTable(
+//           'long',
+//           long, i);
+//       $(id).parent().siblings().removeClass('active');
+//       $(id).parent().addClass('active');
+//       return false;
+//     });
+//   }
+// });

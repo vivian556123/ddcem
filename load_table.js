@@ -11,7 +11,7 @@ function createAudioHTML(path, flat) {
 
 
 function generateEditTable(tableId, filenames, page) {
-  let numPerPage = 4;
+  let numPerPage =4;
   let table = document.getElementById(tableId + '-operation');
   let nrRows = table.rows.length;
   for (let i = 1; i < nrRows; i++) {
@@ -42,7 +42,7 @@ function generateEditTable(tableId, filenames, page) {
       cell.style.textAlign = "center";
 
       cell = row.insertCell(4);
-      cell.innerHTML = createAudioHTML(prefix + 'R-DDCEM' + filenames[i] + '.wav', false);
+      cell.innerHTML = createAudioHTML(prefix + 'RDDCEM' + filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
     } else {
       let cell = row.insertCell(0);
@@ -711,7 +711,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   for (let i = 1; i <= 3; i++) {
-    let id = '#multi-noisy-' + i;
+    let id = '#multi-noisy-operation-' + i;
     $(id).click(function() {
       generateEditTable(
           'multi-noisy',

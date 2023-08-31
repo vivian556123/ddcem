@@ -11,7 +11,7 @@ function createAudioHTML(path, flat) {
 
 
 function generateEditTable(tableId, filenames, page) {
-  let numPerPage =4;
+  let numPerPage = 1;
   let table = document.getElementById(tableId + '-operation');
   let nrRows = table.rows.length;
   for (let i = 1; i < nrRows; i++) {

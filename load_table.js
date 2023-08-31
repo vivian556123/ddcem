@@ -30,7 +30,8 @@ function generateEditTable(tableId, filenames, page) {
       cell.style.textAlign = "center";
 
       cell = row.insertCell(1);
-      cell.innerHTML = createAudioHTML(prefix + 'mixture_'+ filenames[i] + '.wav', false);
+      cell.innerHTML = prefix + 'mixture_'+ filenames[i] + '.wav'
+      // cell.innerHTML = createAudioHTML(prefix + 'mixture_'+ filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
 
       cell = row.insertCell(2);

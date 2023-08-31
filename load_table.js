@@ -628,7 +628,7 @@ melody = ['add_bass_0', 'remove_drum_kit_1', 'replace_drum_kit_with_piano_2', 'r
 
 melody_t = ['菊花台', '麦浪', '月亮不曾奔我而来', 'Lover']
 
-noisy_female_female = ['DDCEM_121-127105-0011_4970-29095-0009','DDCEM_121-127105-0028_4507-16021-0025','DDCEM_121-127105-0028_4507-16021-0025']
+noisy_female_female = ['121-127105-0011_4970-29095-0009','121-127105-0028_4507-16021-0025','121-127105-0028_4507-16021-0025']
 
 
 generateEditTable('add', add  , 1);

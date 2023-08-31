@@ -17,7 +17,7 @@ function generateEditTable(tableId, filenames, page) {
   for (let i = 1; i < nrRows; i++) {
     table.deleteRow(1);
   }
-  const prefix = 'music/edit_' + tableId + '/';
+  const prefix = 'noisy_female-female-samples/' + tableId + '/';
   const end_idx = page * numPerPage;
   for (let i = (page - 1) * numPerPage; i < end_idx; i++) {
     let row = table.insertRow(i % numPerPage + 1);
@@ -30,19 +30,19 @@ function generateEditTable(tableId, filenames, page) {
       cell.style.textAlign = "center";
 
       cell = row.insertCell(1);
-      cell.innerHTML = createAudioHTML(prefix + filenames[i] + '_source.wav', false);
+      cell.innerHTML = createAudioHTML(prefix + 'mixture_'+ filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
 
       cell = row.insertCell(2);
-      cell.innerHTML = createAudioHTML(prefix + filenames[i] + '_target.wav', false);
+      cell.innerHTML = createAudioHTML(prefix + 'gt_'+ filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
 
       cell = row.insertCell(3);
-      cell.innerHTML = createAudioHTML(prefix + filenames[i] + '_instructme.wav', false);
+      cell.innerHTML = createAudioHTML(prefix + 'DDCEM_'+ filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
 
       cell = row.insertCell(4);
-      cell.innerHTML = createAudioHTML(prefix + filenames[i] + '_audit.wav', false);
+      cell.innerHTML = createAudioHTML(prefix + 'R-DDCEM' + filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
     } else {
       let cell = row.insertCell(0);
@@ -628,10 +628,17 @@ melody = ['add_bass_0', 'remove_drum_kit_1', 'replace_drum_kit_with_piano_2', 'r
 
 melody_t = ['菊花台', '麦浪', '月亮不曾奔我而来', 'Lover']
 
+noisy_female_female = ['DDCEM_121-127105-0011_4970-29095-0009','DDCEM_121-127105-0028_4507-16021-0025','DDCEM_121-127105-0028_4507-16021-0025']
+
+
 generateEditTable('add', add  , 1);
 generateEditTable('remove', remove  , 1);
 generateEditTable('extract', extract  , 1);
 generateEditTable('replace', replace  , 1);
+
+generateEditTable('multi_noisy', noisy_female_female , 1);
+
+
 
 generateRemixTable('instr', instr  , 1);
 generateRemixTable('genre', genre  , 1);
@@ -694,6 +701,21 @@ $(document).ready(function() {
       generateEditTable(
           'replace',
           replace, i);
+      $(id).parent().siblings().removeClass('active');
+      $(id).parent().addClass('active');
+      return false;
+    });
+  }
+});
+
+
+$(document).ready(function() {
+  for (let i = 1; i <= 3; i++) {
+    let id = '#replace-operation-' + i;
+    $(id).click(function() {
+      generateEditTable(
+          'multi-noisy',
+          noisy_female_female, i);
       $(id).parent().siblings().removeClass('active');
       $(id).parent().addClass('active');
       return false;

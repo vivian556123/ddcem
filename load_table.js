@@ -17,7 +17,7 @@ function generateEditTable(tableId, filenames, page) {
   for (let i = 1; i < nrRows; i++) {
     table.deleteRow(1);
   }
-  const prefix = 'noisy_female-female-samples/' + tableId + '/';
+  const prefix = 'noisy_female-female-samples/';
   const end_idx = page * numPerPage;
   for (let i = (page - 1) * numPerPage; i < end_idx; i++) {
     let row = table.insertRow(i % numPerPage + 1);

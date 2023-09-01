@@ -683,13 +683,11 @@ melody = ['add_bass_0', 'remove_drum_kit_1', 'replace_drum_kit_with_piano_2', 'r
 
 melody_t = ['菊花台', '麦浪', '月亮不曾奔我而来', 'Lover']
 
-noisy_female_female = ['121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009']
 
 generateEditTable('add', add  , 1);
 generateEditTable('remove', remove  , 1);
 generateEditTable('extract', extract  , 1);
 generateEditTable('replace', replace  , 1);
-generateEditTable('multi-noisy', noisy_female_female  , 1);
 
 
 generateRemixTable('instr', instr  , 1);
@@ -704,11 +702,16 @@ generateRealTable('melody', melody, melody_t, 1);
 generateMultiTable('multi', multi  , 1);
 generateLongTable('long', long  , 1);
 
+noisy_female_female = ['121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009','121-127105-0011_4970-29095-0009']
+
+
+generateDDCEMTable('multi-noisy', noisy_female_female  , 1);
+
 $(document).ready(function() {
   for (let i = 1; i <= 3; i++) {
     let id = '#multi-noisy-operation-' + i;
     $(id).click(function() {
-      generateEditTable(
+      generateDDCEMTable(
           'multi-noisy',
           remove, i);
       $(id).parent().siblings().removeClass('active');

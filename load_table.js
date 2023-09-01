@@ -42,7 +42,7 @@ function generateDDCEMTable(tableId, filenames, page) {
       cell.style.textAlign = "center";
 
       cell = row.insertCell(4);
-      cell.innerHTML = createAudioHTML(prefix +  'gt_'filenames[i] + '.wav', false);
+      cell.innerHTML = createAudioHTML(prefix +  'gt_'+filenames[i] + '.wav', false);
       cell.style.textAlign = "center";
     } else {
       let cell = row.insertCell(0);
